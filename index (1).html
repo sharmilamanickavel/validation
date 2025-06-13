@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Team - Department of Research</title>
+    <link rel = "stylesheet" href = "styles11.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Faculty Team – Department of Research</h1>
+        </div>
+        
+        <div class="faculty-grid">
+            <div class="faculty-card">
+                <div class="faculty-avatar">I</div>
+                <div class="faculty-name">Dr. Iniyan</div>
+                <div class="faculty-dept">Computer Science Dept.</div>
+                <div class="faculty-description">
+                    Passionate about AI and machine learning.
+                </div>
+                <button class="contact-btn" onclick="openModal('Dr. Iniyan')">Contact</button>
+            </div>
+            
+            <div class="faculty-card">
+                <div class="faculty-avatar">M</div>
+                <div class="faculty-name">Dr. Mithran</div>
+                <div class="faculty-dept">ECE Dept.</div>
+                <div class="faculty-description">
+                    Dedicated robotics researcher and educator.
+                </div>
+                <button class="contact-btn" onclick="openModal('Dr. Mithran')">Contact</button>
+            </div>
+            
+            <div class="faculty-card">
+                <div class="faculty-avatar">MR</div>
+                <div class="faculty-name">Prof. Maran</div>
+                <div class="faculty-dept">Mechanical Dept.</div>
+                <div class="faculty-description">
+                    Expert in thermal engineering and design.
+                </div>
+                <button class="contact-btn" onclick="openModal('Prof. Maran')">Contact</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Contact Faculty Member</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="successMessage" class="success-message" style="display: none;">
+                    Message sent successfully!
+                </div>
+                
+                <div id="errorSummary" class="error-summary" style="display: none; color: red; margin-bottom: 20px;">
+                    Please fix the following errors:
+                    <ul id="errorList"></ul>
+                </div>
+                
+                <form id="contactForm" novalidate>
+                    <input type="hidden" id="facultyName" name="facultyName">
+                                      
+                    <div class="form-group">
+                        <label for="fullName">Full Name: <span style="color: red;">*</span></label>
+                        <input type="text" id="fullName" name="fullName" required minlength="2" maxlength="50">
+                        <div class="error-message" id="fullNameError" style="color: red; font-size: 0.9em; display: none;"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email: <span style="color: red;">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-message" id="emailError" style="color: red; font-size: 0.9em; display: none;"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}">
+                        <div class="error-message" id="phoneError" style="color: red; font-size: 0.9em; display: none;"></div>
+                        <small>Optional - 10 digit number</small>
+                    </div>
+                                     
+                    <div class="form-group">
+                        <label for="message">Message: <span style="color: red;">*</span></label>
+                        <textarea id="message" name="message" placeholder="Enter your message here..." required minlength="10" maxlength="1000" rows="5"></textarea>
+                        <div class="error-message" id="messageError" style="color: red; font-size: 0.9em; display: none;"></div>
+                        <small id="charCount">0/1000 characters</small>
+                    </div>
+                         
+                    <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src = "script11.js">      
+    </script>
+</body>
+</html>
